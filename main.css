@@ -1,0 +1,52 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    margin: 5px;
+}
+
+form {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+form * {
+    font-size: 30px;
+}
+
+.todo-item {
+    width: 80%;
+
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    gap: 15px;
+    font-size: 30px;
+
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid darkblue;
+
+    transition: 0.3s;
+}
+
+.todo-item-done {
+    border: 2px solid grey;
+    opacity: 0.5;
+}
+
+.todo-item-done p {
+    text-decoration: line-through;
+}
+
+#todos-count {
+    width: 90%;
+    text-align: right;
+    font-size: 25px;
+    font-weight: 600;
+}
