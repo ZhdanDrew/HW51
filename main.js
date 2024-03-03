@@ -133,12 +133,24 @@ const todoInput = document.querySelector("#todo-title");
 createTodoForm.onsubmit = (event) => {
   event.preventDefault();
 
+
+  const todoText = todoInput.value.trim();
+
+
+  if (todoText === "") {
+      return;
+  }
+
+
+  const existingTodo = APPLICATION.todos.find(todo => todo.title === todoText);
+  if (existingTodo) {
+      alert("Це завдання вже існує в списку!");
+      todoInput.value = "";
+      return;
+  }
+
   const id = APPLICATION.todos.length;
-  const title = todoInput.value;
-  const isDone = false;
-
-  const newTodo = new Todo(id, title, isDone);
-
+  const newTodo = new Todo(id, todoText, false);
   APPLICATION.addTodo(newTodo);
 
   todoInput.value = "";
